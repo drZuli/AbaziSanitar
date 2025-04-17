@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanitar Abazi | Professional Plumbing Services in Zurich</title>
+  <meta name="description" content="Certified plumbing and sanitary services in Zurich. 24/7 emergency repairs, installations, and maintenance for residential and commercial clients.">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1f2937;       /* Dark blue for text */
+      --secondary: #2563eb;     /* Brand blue */
+      --accent: #1e40af;        /* Darker blue */
+      --emergency: #dc2626;     /* Red for emergency */
+    }
+    
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: var(--primary);
+    }
+
+    /* Header Styles */
+    header {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                  url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .logo-icon {
+      width: 60px;
+      height: 60px;
+      background-color: var(--secondary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .logo-text {
+      text-align: left;
+    }
+
+    .logo-main {
+      font-size: 28px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .logo-sub {
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    /* Emergency Banner */
+    .emergency-banner {
+      background-color: var(--emergency);
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-weight: bold;
+    }
+
+    .emergency-banner a {
+      color: white;
+      text-decoration: underline;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: var(--primary);
+      display: flex;
+      justify-content: center;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 5px 15px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: var(--secondary);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    section {
+      padding: 60px 0;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h2:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background-color: var(--secondary);
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-img {
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .service-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .service-card:hover .service-img img {
+      transform: scale(1.05);
+    }
+
+    .service-content {
+      padding: 20px;
+    }
+
+    .service-content h3 {
+      margin-top: 0;
+      color: var(--secondary);
+    }
+
+    /* Emergency Section */
+    .emergency {
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+
+    .emergency-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .emergency-phone {
+      font-size: 1.8em;
+      font-weight: bold;
+      color: var(--emergency);
+      margin: 20px 0;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 8px;
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-author {
+      font-weight: bold;
+    }
+
+    /* Contact Form */
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .contact-form button {
+      background-color: var(--secondary);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary);
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+
+    .footer-column h3 {
+      color: var(--secondary);
+      margin-top: 0;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 8px;
+    }
+
+    .footer-column a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--secondary);
+    }
+
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        padding: 80px 20px;
+      }
+      
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+      
+      .services-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Emergency Banner -->
+  <div class="emergency-banner">
+    <p>24/7 Emergency Plumbing Services: <a href="tel:+41441234567">+41 44 123 45 67</a></p>
+  </div>
+
+  <!-- Header with Logo -->
+  <header>
+    <div class="logo">
+      <div class="logo-icon">SA</div>
+      <div class="logo-text">
+        <div class="logo-main">Sanitar Abazi</div>
+        <div class="logo-sub">Professional Plumbing Services</div>
+      </div>
+    </div>
+    <h1>Your Trusted Plumbing Experts in Zurich</h1>
+    <p>Certified sanitary installations, repairs, and maintenance services</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#emergency">Emergency</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="container">
+    <!-- Services Section -->
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1600585152225-08f58d6e4b2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Plumbing Installation">
+          </div>
+          <div class="service-content">
+            <h3>Plumbing Installation</h3>
+            <p>Professional installation of pipes, fixtures, and appliances for new constructions and renovations.</p>
+            <a href="#contact" class="btn">Request Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Leak Repair">
+          </div>
+          <div class="service-content">
+            <h3>Leak Detection & Repair</h3>
+            <p>Advanced technology to locate hidden leaks and professional repairs to prevent water damage.</p>
+            <a href="#contact" class="btn">Request Service</a>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-img">
+            <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Water Heater">
+          </div>
+          <div class="service-content">
+            <h3>Water Heater Services</h3>
+            <p>Installation, repair, and maintenance of all types of water heaters for optimal performance.</p>
+            <a href="#contact" class="btn">Request Service</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Section -->
+    <section id="emergency" class="emergency">
+      <h2>24/7 Emergency Services</h2>
+      <div class="emergency-content">
+        <p>We understand plumbing emergencies can't wait. Our team is available around the clock to address your urgent plumbing needs.</p>
+        <div class="emergency-phone">
+          <a href="tel:+41441234567">+41 44 123 45 67</a>
+        </div>
+        <p>Average response time: 45 minutes in Zurich area</p>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+      <h2>About Sanitar Abazi</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <p>Founded in 2010, Sanitar Abazi has become one of Zurich's most trusted plumbing service providers. Our team of certified plumbers brings years of experience and the highest quality craftsmanship to every job.</p>
+        <p>We pride ourselves on:</p>
+        <ul>
+          <li>Fully licensed and insured professionals</li>
+          <li>Transparent pricing with no hidden fees</li>
+          <li>Latest technology and equipment</li>
+          <li>100% satisfaction guarantee</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+      <h2 style="color: white;">What Our Clients Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "Sanitar Abazi fixed our burst pipe at 2am during a winter freeze. Professional, fast, and reasonably priced. Highly recommended!"
+          </div>
+          <div class="testimonial-author">- Markus B., Zurich</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "The team installed new bathrooms in our restaurant. They completed the work on time and with minimal disruption to our business."
+          </div>
+          <div class="testimonial-author">- Elena K., Restaurant Owner</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">
+            "Regular maintenance from Sanitar Abazi has prevented costly repairs in our apartment building. Their preventive approach saves money."
+          </div>
+          <div class="testimonial-author">- Property Management AG</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+        <div>
+          <h3>Our Office</h3>
+          <p><strong>Address:</strong> Badenerstrasse 123, 8004 Zurich</p>
+          <p><strong>Phone:</strong> +41 44 123 45 67</p>
+          <p><strong>Email:</strong> info@sanitarabazi.ch</p>
+          <p><strong>Hours:</strong> Mon-Fri: 8:00-18:00<br>Emergency: 24/7</p>
+        </div>
+        <div>
+          <h3>Request Service</h3>
+          <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="tel" placeholder="Phone Number">
+            <select required>
+              <option value="">Select Service</option>
+              <option>Emergency Repair</option>
+              <option>Plumbing Installation</option>
+              <option>Leak Detection</option>
+              <option>Water Heater Service</option>
+              <option>Other</option>
+            </select>
+            <textarea rows="4" placeholder="Describe your needs"></textarea>
+            <button type="submit">Send Request</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Sanitar Abazi</h3>
+        <p>Professional plumbing and sanitary services in Zurich since 2010.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#emergency">Emergency</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li>Badenerstrasse 123</li>
+          <li>8004 Zurich</li>
+          <li>+41 44 123 45 67</li>
+          <li>info@sanitarabazi.ch</li>
+        </ul>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2023 Sanitar Abazi. Part of Abazi Group. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
